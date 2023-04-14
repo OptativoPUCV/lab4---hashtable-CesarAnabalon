@@ -46,3 +46,31 @@ hashmap.c:62:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 a245c2e
+Fri 14 Apr 2023 11:20:24 PM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:15: error: ‘size’ undeclared (first use in this function)
+   56 |   map->size = size;
+      |               ^~~~
+hashmap.c:56:15: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:60:62: error: expected ‘)’ before ‘;’ token
+   60 |   map->buckets = (HashMap**) malloc(capacity*sizeof(HashMap*);
+      |                                    ~                         ^
+      |                                                              )
+hashmap.c:60:16: error: assignment to ‘Pair **’ from incompatible pointer type ‘HashMap **’ {aka ‘struct HashMap **’} [-Werror=incompatible-pointer-types]
+   60 |   map->buckets = (HashMap**) malloc(capacity*sizeof(HashMap*);
+      |                ^
+hashmap.c:62:17: error: expected ‘;’ before ‘}’ token
+   62 |     return NULL;
+      |                 ^
+      |                 ;
+   63 | }
+      | ~                
+hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-type]
+   63 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+c122b88
