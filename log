@@ -253,3 +253,16 @@ Fri 14 Apr 2023 11:44:08 PM UTC:
  tests:  2|5
 total_score: 20/70
 f5b5f16
+Fri 14 Apr 2023 11:46:23 PM UTC: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:49:25: error: invalid operands to binary % (have ‘char * (*)(const char *, int)’ and ‘long int’)
+   49 |     index = (index + 1) % map->capacity;
+      |             ~~~~~~~~~~~ ^ ~~~~~~~~~~~~~
+      |                    |         |
+      |                    |         long int
+      |                    char * (*)(const char *, int)
+Compilation failed
+3177eb1
