@@ -44,17 +44,19 @@ void insertMap(HashMap * map, char * key, void * value) {
   Pair* nodo = createPair(key,value);
   
   long posicion = hash(key,map->capacity);
+  
   Pair* current_pair = map->buckets[posicion];
     if (current_pair != NULL) 
     {
-      free(current_pair);
+      current_pair->value = value;
+      return;
     }
   map->buckets[posicion] = nodo;
   map->size++;
   map->current = posicion;
 
 }
-
+  
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
