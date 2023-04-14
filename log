@@ -284,3 +284,18 @@ hashmap.c:51:61: error: array subscript is not an integer
       |                                                             ^
 Compilation failed
 b388530
+Fri 14 Apr 2023 11:47:04 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:51:29: error: ‘*(map->buckets + (sizetype)((long unsigned int)posicion * 8))’ is a pointer; did you mean to use ‘->’?
+   51 |   if (map->buckets[posicion].key != NULL && strcmp(map->buckets[posicion].key, key) == 0) {
+      |                             ^
+      |                             ->
+hashmap.c:51:74: error: ‘*(map->buckets + (sizetype)((long unsigned int)posicion * 8))’ is a pointer; did you mean to use ‘->’?
+   51 |   if (map->buckets[posicion].key != NULL && strcmp(map->buckets[posicion].key, key) == 0) {
+      |                                                                          ^
+      |                                                                          ->
+Compilation failed
+be3dd35
