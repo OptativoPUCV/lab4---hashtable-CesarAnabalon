@@ -45,7 +45,6 @@ void insertMap(HashMap * map, char * key, void * value) {
   
   long posicion = hash(key,map->capacity);
   
-  Pair* current_pair = map->buckets[posicion];
   
   map->buckets[posicion] = nodo;
   map->size++;
