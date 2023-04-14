@@ -13,3 +13,36 @@ hashmap.c:55:10: error: unused variable ‘map’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 62a49e0
+Fri 14 Apr 2023 11:18:35 PM UTC: 
+ hashmap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:15: error: ‘size’ undeclared (first use in this function)
+   56 |   map->size = size;
+      |               ^~~~
+hashmap.c:56:15: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:59:56: error: expected ‘)’ before ‘;’ token
+   59 |   map->buckets = (Pair**) calloc(capacity*sizeof(Pair*);
+      |                                 ~                      ^
+      |                                                        )
+hashmap.c:59:27: error: too few arguments to function ‘calloc’
+   59 |   map->buckets = (Pair**) calloc(capacity*sizeof(Pair*);
+      |                           ^~~~~~
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:543:14: note: declared here
+  543 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+In file included from test.c:4:
+hashmap.c:61:17: error: expected ‘;’ before ‘}’ token
+   61 |     return NULL;
+      |                 ^
+      |                 ;
+   62 | }
+      | ~                
+hashmap.c:62:1: error: control reaches end of non-void function [-Werror=return-type]
+   62 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+a245c2e
