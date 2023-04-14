@@ -202,3 +202,14 @@ Fri 14 Apr 2023 11:32:30 PM UTC:
  1 file changed, 1 insertion(+)
  tests:  0|0
 5948e3d
+Fri 14 Apr 2023 11:34:20 PM UTC: 
+ hashmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:49:16: error: assignment to ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   49 |   map->current = map->buckets[posicion];
+      |                ^
+cc1: all warnings being treated as errors
+Compilation failed
+db2b17e
