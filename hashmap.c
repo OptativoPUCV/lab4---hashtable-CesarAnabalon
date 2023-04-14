@@ -57,7 +57,7 @@ HashMap* map = (HashMap*) malloc(sizeof(HashMap));
   map->current = -1;
   map->capacity = 0;
   
-  map->buckets = (HashMap**) malloc(capacity*sizeof(HashMap*);
+  map->buckets = (Pair**)malloc(capacity,sizeof(Pair*);
   
     return NULL;
 }
