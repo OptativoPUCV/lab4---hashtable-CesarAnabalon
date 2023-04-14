@@ -271,3 +271,16 @@ Fri 14 Apr 2023 11:46:34 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 72db5c7
+Fri 14 Apr 2023 11:46:51 PM UTC: 
+ hashmap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:51:19: error: array subscript is not an integer
+   51 |   if (map->buckets[index].key != NULL && strcmp(map->buckets[index].key, key) == 0) {
+      |                   ^
+hashmap.c:51:61: error: array subscript is not an integer
+   51 |   if (map->buckets[index].key != NULL && strcmp(map->buckets[index].key, key) == 0) {
+      |                                                             ^
+Compilation failed
+b388530

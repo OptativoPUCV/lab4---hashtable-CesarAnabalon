@@ -48,6 +48,9 @@ void insertMap(HashMap * map, char * key, void * value) {
   while (map->buckets[posicion]->key != NULL && strcmp(map->buckets[posicion]->key, key) != 0) {
     posicion = (posicion + 1) % map->capacity;
   }
+  if (map->buckets[index].key != NULL && strcmp(map->buckets[index].key, key) == 0) {
+    return;
+  }
   
   map->buckets[posicion] = nodo;
   map->size++;
