@@ -213,3 +213,8 @@ hashmap.c:49:16: error: assignment to ‘long int’ from ‘Pair *’ makes int
 cc1: all warnings being treated as errors
 Compilation failed
 db2b17e
+Fri 14 Apr 2023 11:35:16 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+c8523d1
