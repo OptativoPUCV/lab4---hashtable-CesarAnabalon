@@ -127,3 +127,24 @@ hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 defccf8
+Fri 14 Apr 2023 11:21:48 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:60:55: error: expected ‘)’ before ‘;’ token
+   60 |   map->buckets = (Pair**)calloc(capacity,sizeof(Pair*);
+      |                                ~                      ^
+      |                                                       )
+hashmap.c:62:17: error: expected ‘;’ before ‘}’ token
+   62 |     return NULL;
+      |                 ^
+      |                 ;
+   63 | }
+      | ~                
+hashmap.c:63:1: error: control reaches end of non-void function [-Werror=return-type]
+   63 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+2c57e0d
