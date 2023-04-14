@@ -41,10 +41,11 @@ int is_equal(void* key1, void* key2){
 
 void insertMap(HashMap * map, char * key, void * value) {
 
+  Pair* nodo = createPair(key,value);
+  
   long posicion = hash(key,map->capacity);
-  map->buckets[posicion]->key = key;
-  map->buckets[posicion]->value = value;
-
+  map->buckets[posicion] = nodo;
+  
   map->size++;
   map->current = posicion;
 
