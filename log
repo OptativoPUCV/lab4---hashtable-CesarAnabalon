@@ -236,3 +236,14 @@ Fri 14 Apr 2023 11:41:23 PM UTC:
  tests:  2|5
 total_score: 20/70
 309c10b
+Fri 14 Apr 2023 11:44:00 PM UTC: 
+ hashmap.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:9: error: unused variable ‘current_pair’ [-Werror=unused-variable]
+   48 |   Pair* current_pair = map->buckets[posicion];
+      |         ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3a6815d
