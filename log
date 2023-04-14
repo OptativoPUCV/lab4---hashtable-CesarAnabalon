@@ -349,3 +349,18 @@ In file included from test.c:3:
 cc1: all warnings being treated as errors
 Compilation failed
 17cbcee
+Fri 14 Apr 2023 11:57:28 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:46:43: error: argument 2 null where non-null expected [-Werror=nonnull]
+   46 |   while(map->buckets[posicion] != NULL && strcmp(map->buckets[posicion]->key,NULL) != 0)
+      |                                           ^~~~~~
+In file included from test.c:3:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/string.h:156:12: note: in a call to function ‘strcmp’ declared ‘nonnull’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bee7863
