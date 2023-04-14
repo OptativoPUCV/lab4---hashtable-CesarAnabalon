@@ -43,10 +43,10 @@ void insertMap(HashMap * map, char * key, void * value)
 { 
   long posicion = hash(key,map->capacity);
   
-  while(map->buckets[posicion] != NULL)
-    {
-      posicion++;
-    }
+  while(map->buckets[posicion] != NULL && strcmp(map->buckets[posicion]->key,NULL) == 0)
+  {
+    posicion++;
+  }
   
   map->buckets[posicion]->key = key;  
   map->buckets[posicion]->value = value;
