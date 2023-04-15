@@ -518,3 +518,16 @@ Sat 15 Apr 2023 05:09:57 AM UTC:
  tests:  16|1
 total_score: 60/70
 b92c222
+Sat 15 Apr 2023 05:14:58 AM UTC: 
+ hashmap.c | 30 +++++++++++++++++++++++++++++-
+ 1 file changed, 29 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:78:24: error: ‘Pair’ has no member named ‘next’
+   78 |             while (pair->next != NULL) {
+      |                        ^~
+hashmap.c:79:28: error: ‘Pair’ has no member named ‘next’
+   79 |                 pair = pair->next;
+      |                            ^~
+Compilation failed
+1794d84

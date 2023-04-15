@@ -57,8 +57,36 @@ void insertMap(HashMap * map, char * key, void * value)
 }
   
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+// a - Cree una variable auxiliar de tipo Pair** para matener el arreglo map->buckets (old_buckets);
+    Pair **old_buckets = map->buckets;
 
+    // b - Duplique el valor de la variable capacity.
+    long old_capacity = map->capacity;
+    map->capacity *= 2;
+
+    // c - Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
+    map->buckets = (Pair**)calloc(map->capacity, sizeof(Pair*));
+
+    // d - Inicialice size a 0.
+    map->size = 0;
+
+    // e - Inserte los elementos del arreglo old_buckets en el mapa (use la función insertMap que ya implementó).
+    for (int i = 0; i < old_capacity; i++) {
+        Pair *pair = old_buckets[i];
+        if (pair != NULL) {
+            insertMap(map, pair->key, pair->value);
+            while (pair->next != NULL) {
+                pair = pair->next;
+                insertMap(map, pair->key, pair->value);
+            }
+        }
+    }
+
+    // Liberar memoria del arreglo antiguo
+    free(old_buckets);
+
+    // Actualizar contador de veces que se ha llamado a la función enlarge
+    enlarge_called++;
 
 }
 
