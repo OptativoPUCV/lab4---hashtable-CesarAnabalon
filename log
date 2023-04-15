@@ -531,3 +531,16 @@ hashmap.c:79:28: error: ‘Pair’ has no member named ‘next’
       |                            ^~
 Compilation failed
 1794d84
+Sat 15 Apr 2023 05:15:58 AM UTC: 
+ hashmap.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:74:24: error: ‘Pair’ has no member named ‘next’
+   74 |             while (pair->next != NULL) {
+      |                        ^~
+hashmap.c:75:28: error: ‘Pair’ has no member named ‘next’
+   75 |                 pair = pair->next;
+      |                            ^~
+Compilation failed
+4f99063
