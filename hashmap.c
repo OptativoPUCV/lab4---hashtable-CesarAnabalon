@@ -78,7 +78,7 @@ void eraseMap(HashMap * map,  char * key)
   Pair* nodo = searchMap(map,key);
   if(nodo != NULL)
   {
-    nodo->key = null;
+    nodo->key = NULL;
     map->size--;
   }
 
