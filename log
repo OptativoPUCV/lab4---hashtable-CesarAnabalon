@@ -386,3 +386,19 @@ hashmap.c:82:8: error: unused variable ‘valor’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 95bfd66
+Sat 15 Apr 2023 04:41:28 AM UTC: 
+ hashmap.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:83:21: error: ‘valor’ undeclared (first use in this function); did you mean ‘valloc’?
+   83 |   long posicion_1 = valor;
+      |                     ^~~~~
+      |                     valloc
+hashmap.c:83:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:83:8: error: unused variable ‘posicion_1’ [-Werror=unused-variable]
+   83 |   long posicion_1 = valor;
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d07e945
