@@ -402,3 +402,14 @@ hashmap.c:83:8: error: unused variable ‘posicion_1’ [-Werror=unused-variable
 cc1: all warnings being treated as errors
 Compilation failed
 d07e945
+Sat 15 Apr 2023 04:41:37 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:83:8: error: unused variable ‘posicion_1’ [-Werror=unused-variable]
+   83 |   long posicion_1 = posicion;
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+54876bf

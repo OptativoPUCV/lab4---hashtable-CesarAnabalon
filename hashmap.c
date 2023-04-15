@@ -80,7 +80,7 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) {   
   long posicion = hash(key,map->capacity);
-  long posicion_1 = valor;
+  long posicion_1 = posicion;
 
   while(map->buckets[posicion] != NULL)
     {
