@@ -56,25 +56,23 @@ void insertMap(HashMap * map, char * key, void * value)
 
 }
   
-void enlarge(HashMap * map) {
-// a - Crear variable auxiliar
-    Pair** old_buckets = map->buckets;
-    // b - Duplicar capacidad
-    map->capacity *= 2;
-    // c - Asignar nuevo arreglo con la nueva capacidad
-    map->buckets = (Pair**) calloc(map->capacity, sizeof(Pair*));
-    // d - Inicializar size a 0
-    map->size = 0;
-    // e - Insertar elementos del arreglo old_buckets
-    for (int i = 0; i < map->capacity/2; i++) {
-        if (old_buckets[i] != NULL) {
-            insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
-        }
+void enlarge(HashMap * map) 
+{
+  Pair** anteriorRegistro = map->buckets;
+  map->capacity *= 2;
+  map->buckets = (Pair**) calloc(map->capacity, sizeof(Pair*));
+
+  map->size = 0;
+
+  for (int i = 0; i < map->capacity/2; i++) 
+  {
+    if (anteriorRegistro[i] != NULL) 
+    {
+      insertMap(map, anteriorRegistro[i]->key, anteriorRegistro[i]->value);
     }
-    // Liberar memoria del arreglo antiguo
-    free(old_buckets);
-    // Aumentar contador de llamados a enlarge
-    enlarge_called++;
+  }
+
+  enlarge_called++;
 }
 
 
@@ -124,19 +122,12 @@ Pair * firstMap(HashMap * map) {
     {
       map->current = i;
       return map->buckets[i];
-    }
+     }
   }
   return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
-  for (int i = map->current+1; i < map->capacity; i++) 
-  {
-    if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) 
-    {
-      map->current = i;
-      return map->buckets[i];
-    }
-  }
-  return NULL;
+
+    return NULL;
 }
