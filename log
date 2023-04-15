@@ -413,3 +413,24 @@ hashmap.c:83:8: error: unused variable ‘posicion_1’ [-Werror=unused-variable
 cc1: all warnings being treated as errors
 Compilation failed
 54876bf
+Sat 15 Apr 2023 04:42:13 AM UTC: 
+ hashmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:92:27: error: invalid operands to binary % (have ‘char * (*)(const char *, int)’ and ‘long int’)
+   92 |       index = (index + 1) % map->capacity;
+      |               ~~~~~~~~~~~ ^ ~~~~~~~~~~~~~
+      |                      |         |
+      |                      |         long int
+      |                      char * (*)(const char *, int)
+hashmap.c:93:20: error: ‘start_index’ undeclared (first use in this function)
+   93 |       if (index == start_index) break;
+      |                    ^~~~~~~~~~~
+hashmap.c:93:20: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:83:8: error: unused variable ‘posicion_1’ [-Werror=unused-variable]
+   83 |   long posicion_1 = posicion;
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e83d153
