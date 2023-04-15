@@ -47,6 +47,7 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     posicion = (posicion+1)%map->capacity;
   }
+  
   Pair * nodo = createPair(key,value); 
   
   map->buckets[posicion] = nodo;  
@@ -78,7 +79,8 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
+  long valor = hash(key,map->capacity);
+  
 
     return NULL;
 }

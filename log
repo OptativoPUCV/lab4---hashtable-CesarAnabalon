@@ -375,3 +375,14 @@ Sat 15 Apr 2023 12:01:03 AM UTC:
  tests:  5|4
 total_score: 30/70
 ce4143a
+Sat 15 Apr 2023 04:38:27 AM UTC: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:82:8: error: unused variable ‘valor’ [-Werror=unused-variable]
+   82 |   long valor = hash(key,map->capacity);
+      |        ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+95bfd66
