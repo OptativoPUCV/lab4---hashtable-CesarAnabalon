@@ -440,3 +440,14 @@ Sat 15 Apr 2023 04:43:01 AM UTC:
  tests:  8|3
 total_score: 40/70
 a622d08
+Sat 15 Apr 2023 04:46:38 AM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:78:9: error: unused variable ‘nodo’ [-Werror=unused-variable]
+   78 |   Pair* nodo = searchMap(map,key);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9413a3d

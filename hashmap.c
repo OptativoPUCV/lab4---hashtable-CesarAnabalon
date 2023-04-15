@@ -73,8 +73,9 @@ HashMap * createMap(long capacity) {
   return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
+void eraseMap(HashMap * map,  char * key) 
+{    
+  Pair* nodo = searchMap(map,key);
 
 }
 
@@ -93,7 +94,7 @@ Pair * searchMap(HashMap * map,  char * key) {
       if (posicion == posicion_1) break;
     }
 
-    return NULL;
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
