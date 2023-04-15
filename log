@@ -451,3 +451,22 @@ hashmap.c:78:9: error: unused variable ‘nodo’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 9413a3d
+Sat 15 Apr 2023 04:47:37 AM UTC: 
+ hashmap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:79:6: error: ‘pair’ undeclared (first use in this function); did you mean ‘Pair’?
+   79 |   if(pair != NULL)
+      |      ^~~~
+      |      Pair
+hashmap.c:79:6: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:81:17: error: ‘null’ undeclared (first use in this function)
+   81 |     pair->key = null;
+      |                 ^~~~
+hashmap.c:78:9: error: unused variable ‘nodo’ [-Werror=unused-variable]
+   78 |   Pair* nodo = searchMap(map,key);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fc64be7
